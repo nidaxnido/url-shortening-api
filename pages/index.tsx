@@ -123,7 +123,7 @@ export default function Home() {
                         alignItems="center"
                         key={item.shortened}>
               <Text color="ni.darkBlue">{item.url}</Text>
-              <Flex alignItems="center">
+              <Flex alignItems="center" ml="30px">
                 <Text color="ni.violet">{item.shortened}</Text>
                 <Button color="white"
                         onClick={()=>kopas(item.shortened,idx)} 
