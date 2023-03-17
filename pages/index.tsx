@@ -40,7 +40,8 @@ export default function Home() {
       : []
 
     setShort(parsedBookmark)
-    setIsCopied(Array(short.length).fill("Copy"))
+    
+    setTimeout(() => setIsCopied(Array(short.length).fill("Copy")), 1000)
   }, [])
   useEffect(() => { 
     if(btnText !== initialText){
@@ -77,7 +78,7 @@ export default function Home() {
     setIsCopied(temp)
     setTimeout(() => setIsCopied(Array(short.length).fill("Copy")), 1000)
   }
-  console.log(short)
+  // console.log(short)
   console.log(isCopied)
   return (
     <>
