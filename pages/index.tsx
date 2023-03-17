@@ -14,12 +14,12 @@ type pair = {
 
 export default function Home() {
   const isMobile = useMediaQuery({query: '(max-width:375px)'})
-  const [anchor, setAnchor] = useState('');
+  const [anchor, setAnchor] = useState("");
   const [short, setShort] = useState<pair[]>([])
   const [isCopied, setIsCopied] = useState(Array(short.length).fill("Copy"))
   const initialText = "Copy"
-  const [btnText, setBtnText] = useState('Copy')
-  const [err, setErr] = useState('')
+  const [btnText, setBtnText] = useState("Copy")
+  const [err, setErr] = useState("")
   const addToshort = (ayatLs:pair) => {
     if(short.length >= 5) short.shift()
     setShort([...short, ayatLs])
@@ -28,11 +28,11 @@ export default function Home() {
   
   useEffect(() => {
     if (short.length === 0) return
-    localStorage.setItem('shortened', JSON.stringify(short))
+    localStorage.setItem("shortened", JSON.stringify(short))
   }, [short])
 
   useEffect(() => {
-    const stored = localStorage.getItem('shortened')
+    const stored = localStorage.getItem("shortened")
 
     const parsedBookmark =
       stored !== null
@@ -113,7 +113,7 @@ export default function Home() {
           <Text color="red">{err}</Text>
           {
             short.length > 0 && 
-            <Text mt="30px" mb="15px">Below are the links you've shortened before: </Text>
+            <Text mt="30px" mb="15px">Below are the links you have shortened before: </Text>
           }
           {  
             short.map((item,idx)=>{
